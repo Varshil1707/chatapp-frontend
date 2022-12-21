@@ -4,7 +4,7 @@ import socketIo from "socket.io-client";
 import "./Chat.css";
 import Message from "./Message";
 
-const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+const ENDPOINT = "http://localhost:6001/";
 
 const Chat = () => {
   const socket = socketIo(ENDPOINT, { transports: ["websocket"] });
@@ -21,14 +21,7 @@ const Chat = () => {
   };
   useEffect(() => {
     socket.on("connect", () => {
-            axios
-    .get(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=falsey"
-    )
-    .then((data) => {
-      console.log(data.data);
-    })
-    .catch((err) => console.log("err"));
+
       console.log("connected");
       setId(socket.id);
     });
@@ -46,10 +39,9 @@ const Chat = () => {
       console.log(data);
       setMessages([...messages, data]);
     });
-    return () => {
-      socket.emit("disconnected");
-      socket.off();
-    };
+
+
+
   }, []);
 
   useEffect(()=>{
