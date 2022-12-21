@@ -5,6 +5,7 @@ import "./Chat.css";
 import Message from "./Message";
 
 const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+// const ENDPOINT = "http://localhost:6001/"
 
 const Chat = () => {
   const socket = socketIo(ENDPOINT, { transports: ["websocket"] });
@@ -49,7 +50,6 @@ const Chat = () => {
     
   },[messages])
 
-  console.log(messages)
 
   return (
     <div className="chatPage">
