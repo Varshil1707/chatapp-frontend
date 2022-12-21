@@ -28,15 +28,12 @@ const Chat = () => {
     socket.emit("joined", { user });
     socket.on("welcome", (data) => {
       setMessages([...messages, data]);
-      console.log(data.user, data.message);
     });
     socket.on("userJoined", (data) => {
       setMessages([...messages, data]);
-      console.log(data.user, data.message);
     });
    
     socket.on("leave", (data) => {
-      console.log(data);
       setMessages([...messages, data]);
     });
 
