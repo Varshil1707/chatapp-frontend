@@ -3,8 +3,8 @@ import socketIo from "socket.io-client";
 import "./Chat.css";
 import Message from "./Message";
 
-// const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
-const ENDPOINT = "http://localhost:6001/";
+const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+// const ENDPOINT = "http://localhost:6001/";
 let socket;
 
 const Chat = () => {
