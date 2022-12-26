@@ -3,16 +3,16 @@ import socketIo from "socket.io-client";
 import "./Chat.css";
 import Message from "./Message";
 
-const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
-// const ENDPOINT = "http://localhost:6001/"
-let socket
+// const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+const ENDPOINT = "http://localhost:6001/";
+let socket;
 
 const Chat = () => {
   const user = localStorage.getItem("user");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [id, setId] = useState("");
-  
+
   const send = () => {
     // const message = document.getElementById('chatInput').value
     socket.emit("message", { message, id });
@@ -21,7 +21,6 @@ const Chat = () => {
   };
   useEffect(() => {
     socket = socketIo(ENDPOINT, { transports: ["websocket"] });
-    console.log(socket)
     socket.on("connect", () => {
       console.log("connected");
       setId(socket.id);
@@ -33,7 +32,6 @@ const Chat = () => {
     socket.on("userJoined", (data) => {
       setMessages([...messages, data]);
     });
-
   }, []);
 
   useEffect(() => {
@@ -52,6 +50,7 @@ const Chat = () => {
         <div className="chatBox">
           {messages.map((data, i) => (
             <Message
+              key={i}
               message={data.message}
               classes={data.id === id ? "Right" : "Left"}
               user={data.id === id ? "" : data.user}
