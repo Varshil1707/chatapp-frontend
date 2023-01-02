@@ -4,11 +4,21 @@ import "./Message.css"
 const Message = ({user,message,classes}) => {
     if(user ){
       return (
-        <div className={`message${classes}`} >{`${user} : ${message}`}</div>
+        <div className={`message${classes}`} >
+          <p>
+
+          {`${user} : ${message}`}
+          </p>
+          </div>
       )
     }else {
       return (
-        <div className={`message${classes}`} >{`You : ${message}`}</div>
+        <div className={`message${classes}`} >
+          <p>
+            {`You : ${message}`}
+
+          </p>
+          </div>
       )
     }
 
