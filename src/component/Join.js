@@ -20,6 +20,7 @@ const Join = () => {
           type="text"
           onChange={(e) => setUser(e.target.value)}
           id="joinInput"
+          placeholder="Enter Your Name"
         />
         <button className="loginButton" onClick={sendUser}>
           Login In

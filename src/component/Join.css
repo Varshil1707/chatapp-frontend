@@ -8,23 +8,34 @@
     justify-content: center;
     align-items: center;
     display: flex;  
-    background-color: rgb(27, 17, 17);
+    background-color: rgb(102,95,170);
+    
 }
 .joinPageContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
     width: 50%;
-    background-color: blanchedalmond;
 }
 
 #joinInput {
-    width: 15vw;
-    margin: 14px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: large;
 }
 
 .loginButton {
-    margin: 14px;
+    width: 100%;
+    background-color: rgb(96, 78, 255);
+    color: white;
+    padding: 14px 10px;
+    margin: 8px 2px;
+    border: none;
+    border-radius: 9px;
     cursor: pointer;
 }

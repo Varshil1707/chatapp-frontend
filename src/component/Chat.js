@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import socketIo from "socket.io-client";
 import "./Chat.css";
 import Message from "./Message";
+import SendIcon from '@mui/icons-material/Send';
 
-const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
-// const ENDPOINT = "http://localhost:6002/";
+// const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+const ENDPOINT = "http://localhost:6002/";
 let socket;
 
 const Chat = () => {
@@ -32,6 +33,8 @@ const Chat = () => {
     socket.on("userJoined", (data) => {
       setMessages([...messages, data]);
     });
+
+    socket.on('disconnect-method',(data)=>console.log(data))
 
   }, []);
 
@@ -68,7 +71,7 @@ const Chat = () => {
             value={message}
           />
           <button className="inputBoxButton" onClick={send}>
-            Send
+            <SendIcon fontSize="small" color ="action" />
           </button>
         </div>
       </div>
