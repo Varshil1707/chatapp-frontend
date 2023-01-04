@@ -22,9 +22,14 @@ const Join = () => {
           id="joinInput"
           placeholder="Enter Your Name"
         />
-        <button className="loginButton" onClick={sendUser}>
+      {user.length <= 0 ? 
+        <button disabled  className="loginButton" onClick={sendUser}>
           Login In
-        </button>
+        </button> :
+                  <button  className="loginButton" onClick={sendUser}>
+                  Login In
+                </button>
+      }
       </div>
     </div>
   );

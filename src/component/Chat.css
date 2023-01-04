@@ -31,7 +31,7 @@
 
 .chatBox {
   flex: 0.8;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .inputBox {
