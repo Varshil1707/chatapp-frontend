@@ -1,0 +1,27 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    top: 20px;
+}
+
+.user-details {
+    flex: 0.2;
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid black;
+    background-color: rgb(102,95,170);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.list-of-users {
+    background-color: #F8CCC3;
+    justify-content: center;
+    display: flex;
+    flex:  0.7;
+    border-radius: 10px;
+    margin: 5px;
+    height: 100%;
+}

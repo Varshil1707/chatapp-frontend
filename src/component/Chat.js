@@ -3,9 +3,10 @@ import socketIo from "socket.io-client";
 import "./Chat.css";
 import Message from "./Message";
 import SendIcon from "@mui/icons-material/Send";
+import Sidebar from "./Sidebar";
 
-const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
-// const ENDPOINT = "http://localhost:6002/";
+// const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+const ENDPOINT = "http://localhost:6002/";
 let socket;
 
 const Chat = () => {
@@ -42,8 +43,17 @@ const Chat = () => {
     });
   }, [messages]);
 
+  const handelSubmit = e => {
+    if(e.keyCode === 13){
+      send()
+    }
+  }
+
   return (
     <div className="chatPage">
+      <div className="sidepanel">
+        <Sidebar/>
+      </div>
       <div className="chatContainer">
         <div className="header">
           <h2>Chat App</h2>
@@ -66,7 +76,8 @@ const Chat = () => {
             onChange={(e) => setMessage(e.target.value)}
             type="text"
             value={message}
-          />
+            onKeyDown = {handelSubmit}
+/>
 
           {message.length <= 0 ? (
             <button disabled className="inputBoxButton" onClick={send}>
