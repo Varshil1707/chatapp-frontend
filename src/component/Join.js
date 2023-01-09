@@ -3,7 +3,9 @@ import "./Join.css";
 import { useNavigate } from "react-router-dom";
 
 const Join = () => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const navigate = useNavigate();
 
   const sendUser = (e) => {
@@ -18,9 +20,15 @@ const Join = () => {
         <h1>Chat App</h1>
         <input
           type="text"
-          onChange={(e) => setUser(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           id="joinInput"
-          placeholder="Enter Your Name"
+          placeholder="Enter Your Email"
+        />
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          id="joinInput"
+          placeholder="Enter Your Password"
         />
       {user.length <= 0 ? 
         <button disabled  className="loginButton" onClick={sendUser}>

@@ -18,10 +18,31 @@
 
 .list-of-users {
     background-color: #F8CCC3;
-    justify-content: center;
     display: flex;
     flex:  0.7;
     border-radius: 10px;
     margin: 5px;
     height: 100%;
+    flex-direction: column;
+
 }
+
+.user-list-details{
+    height: fit-content;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 10px;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f39b89;
+    padding: 2.5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-list-details > h6 {
+    padding: 10px;
+    margin: 10px;
+}
+
+

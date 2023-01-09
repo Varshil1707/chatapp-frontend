@@ -5,10 +5,9 @@ import Chat from "./component/Chat";
 import Signup from "./component/Signup";
 
 function App() {
-  const user = localStorage.getItem("user");
 
   return (
-    <div classNameName="App">
+    <div className="App">
       <Routes>
         <Route path="/chat" element={<Chat />} exact />
         <Route path="/" element={<Join />} exact />

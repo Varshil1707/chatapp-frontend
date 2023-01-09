@@ -34,7 +34,7 @@ const Signup = () => {
         <input
           className="input"
           type="text"
-          placeholder="Enter Your Name"
+          placeholder="Enter Full Name"
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
