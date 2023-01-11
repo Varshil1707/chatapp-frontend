@@ -26,11 +26,11 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="user-details">User-Details</div>
       <div className="list-of-users">
-      {userDetails.map((data) => {
-          return (
+      {userDetails.map((data,index) => 
+           (
              
-        <div className="user-list-details">
-          <div className="avatar">
+        <div className="user-list-details" key={index} >
+          <div className="avatar" >
             <Avatar
               sx={{
                 bgcolor: "rgb(102,95,170)",
@@ -43,7 +43,7 @@ const Sidebar = () => {
           <h6> {data.data.name}  </h6>
         </div>
           )
-      })}
+      )}
     </div>
       </div>
   );

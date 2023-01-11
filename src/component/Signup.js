@@ -12,7 +12,7 @@ const Signup = () => {
 
     axios
       .post(
-        "https://chat-app-a2f38-default-rtdb.firebaseio.com/user-details.json",
+        "http://localhost:6002/register",
         {
           name: name,
           email: email,
