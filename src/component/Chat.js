@@ -30,6 +30,7 @@ const Chat = () => {
     socket.emit("joined", { user });
     socket.on("welcome", (data) => {
       setMessages([...messages, data]);
+
     });
     socket.on("userJoined", (data) => {
       setMessages([...messages, data]);

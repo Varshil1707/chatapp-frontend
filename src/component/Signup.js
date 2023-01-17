@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import "./signup.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post(
-        "http://localhost:6002/register",
-        {
-          name: name,
-          email: email,
-          password: password,
-        }
-      )
-      .then(() => console.log("Success"))
-      .catch((err) => console.log(err));
+      .post("http://localhost:6002/register", {
+        name: name,
+        email: email,
+        password: password,
+      })
+      .then((data) => {
+        console.log(data.data.message);
+      })
+      .catch((err) => console.log("Error", err));
 
     setEmail("");
     setName("");

@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/chat" element={<Chat />} exact />
         <Route path="/" element={<Join />} exact />
+        <Route path="/signup" element={<Signup />} exact />
       </Routes>
       {/* <Signup/> */}
     </div>
