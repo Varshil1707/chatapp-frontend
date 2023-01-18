@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Join.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import axios from "axios";
-import { login } from "../features/userSlice";
 
 const Join = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +9,6 @@ const Join = () => {
   const [password, setPassword] = useState("");
   const [userDetails, setUserDetails] = useState([]);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   let dataArray = [];
 
   const sendUser = (e) => {

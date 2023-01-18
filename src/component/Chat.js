@@ -13,6 +13,7 @@ const Chat = () => {
   const user = localStorage.getItem("user");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [clientCount, setClientCount] = useState(0)
   const [id, setId] = useState("");
 
   const send = () => {
@@ -35,14 +36,21 @@ const Chat = () => {
     socket.on("userJoined", (data) => {
       setMessages([...messages, data]);
     });
+    socket.on("clientsCount", (data)=> {setClientCount(data.count)})
   }, []);
 
   useEffect(() => {
+    socket.on("clientsCount", (data)=> {setClientCount(data.count)})
     socket.on("sentMessage", (data) => {
       setMessages([...messages, data]);
       console.log(`${data.user} : ${data.message}`);
     });
   }, [messages]);
+
+  useEffect(()=>{
+    
+  },[])
+  
 
   const handelSubmit = e => {
     if(e.keyCode === 13){
@@ -50,10 +58,11 @@ const Chat = () => {
     }
   }
 
+
   return (
     <div className="chatPage">
       <div className="sidepanel">
-        <Sidebar/>
+        <Sidebar clientCount = {clientCount} />
       </div>
       <div className="chatContainer">
         <div className="header">

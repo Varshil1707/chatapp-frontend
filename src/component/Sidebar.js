@@ -3,7 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import "./Sidebar.css";
 import axios from "axios";
 
-const Sidebar = () => {
+const Sidebar = ({clientCount}) => {
+  console.log(clientCount)
   let dataArray = [];
   const [userDetails, setUserDetails] = useState([]);
   useEffect(() => {
@@ -24,7 +25,10 @@ const Sidebar = () => {
   console.log(userDetails);
   return (
     <div className="sidebar">
-      <div className="user-details">User-Details</div>
+      <div className="user-details">
+        <p className="number-of-users" >Number Of Users</p>
+        <p className="client-count" >{clientCount}</p>
+      </div>
       <div className="list-of-users">
       {userDetails.map((data,index) => 
            (

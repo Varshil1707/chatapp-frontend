@@ -14,6 +14,8 @@
     background-color: rgb(102,95,170);
     border-radius: 10px;
     margin: 5px;
+    flex-direction: column;
+    text-align: center;
 }
 
 .list-of-users {
@@ -45,4 +47,10 @@
     margin: 10px;
 }
 
+.number-of-users{
+    font-size: x-large;
+}
 
+.client-count{
+    font-size: x-large;
+}
