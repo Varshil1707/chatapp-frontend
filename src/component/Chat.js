@@ -5,8 +5,8 @@ import Message from "./Message";
 import SendIcon from "@mui/icons-material/Send";
 import Sidebar from "./Sidebar";
 
-// const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
-const ENDPOINT = "http://localhost:6002/";
+const ENDPOINT = "https://chatapp-backend-ne38.onrender.com";
+// const ENDPOINT = "http://localhost:6002/";
 let socket;
 
 const Chat = () => {
