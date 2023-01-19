@@ -38,6 +38,13 @@ const Join = () => {
   // if (auth) {
   //   navigate("/chat");
   // }
+
+
+  const handelSubmit = (e) => {
+    if (e.keyCode === 13) {
+      sendUser();
+    }
+  };
   return (
     <div className="joinPage">
       <div className="joinPageContainer">
@@ -62,6 +69,7 @@ const Join = () => {
           onChange={(e) => setName(e.target.value)}
           className="joinInput"
           placeholder="Enter Your name"
+          onKeyDown={handelSubmit}
         />
 
         <button className="loginButton" onClick={sendUser}>
